@@ -1,7 +1,6 @@
 import csv   # 導入csv包
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # LIMIT=600000
 LIMIT=3
 file_count=0
@@ -30,7 +29,4 @@ if url_list:
     with open(file_name,'w+') as file:
         for url in url_list:
             writer=csv.writer(file)
-
-
-
 print('done test')
