@@ -5,22 +5,22 @@ import sys
 import csv
 
 # 初始化編碼
-csv.reload(sys)
-sys.setdefaultencoding('utf-8')
+# csv.reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 # 讀取本地csv檔案
-csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'csv','source.csv')
-csv_reader = csv.reader(open(csv_path,'rb'))
-csv_reader.next()
+csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'csv','file.csv')
+csv_reader = csv.reader(open('file.csv','r+'))
+# csv_reader.next()
 i=j=1
 for row in csv_reader:
-    if i%102==0:
+    if i%11==0:
         print ("CSV文件source%s已生成成功") % j
         j+=1
     # 寫入csv
     csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'csv','source'+str(j)+'.csv')
-    csv_file = file(csv_path, 'ab+')
-    csv_write = csv.writer(csv_file)
+    csv_file = csv.file('file.csv', 'r+')
+    csv_write = csv.writer('file.csv')
     # 文件不存在则写入头部
     if os.path.getsize(csv_path)==0:
         csv_write.writerow(['v_products_image','v_products_name_1','v_products_description_1','v_products_price','v_categories_name_1','v_categories_name_2'])

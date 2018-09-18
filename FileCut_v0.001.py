@@ -2,10 +2,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # txt文字檔分割
-LIMIT=100000
+LIMIT=1
 file_count=0
 url_list=[]
-with open("pp87.txt") as f:
+with open("ppp87.txt") as f:
     for line in f:
         url_list.append(line)
         if len(url_list)<LIMIT:
@@ -21,5 +21,7 @@ if url_list:
     file_name=str(file_count)+".txt"
     with open(file_name,'w') as file:
         for url in url_list:
+            print(url)
             file.write(url)
+
 print('done test')
