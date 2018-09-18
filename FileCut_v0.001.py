@@ -1,11 +1,11 @@
 
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
-LIMIT=5
+# txt文字檔分割
+LIMIT=100000
 file_count=0
 url_list=[]
-with open("piaeye87.txt") as f:
+with open("pp87.txt") as f:
     for line in f:
         url_list.append(line)
         if len(url_list)<LIMIT:
